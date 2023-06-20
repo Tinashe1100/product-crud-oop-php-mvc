@@ -58,12 +58,12 @@ class Products extends Database
         $stmt->execute([$title, $image, $desc, $price]);
     }
 
-    protected function deleteProduct($id)
+    public function deleteProduct($id)
     {
         $id = $id;
 
         $query = "DELETE FROM products WHERE id = '$id'";
         $stmt = $this->connect()->prepare($query);
-        $stmt->execute([$id]);
+        $stmt->execute();
     }
 }
