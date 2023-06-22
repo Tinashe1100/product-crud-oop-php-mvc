@@ -10,7 +10,7 @@ $id = $_GET['id'];
             <img src="assets/images/<?php echo $product['image'] ?>" class="img-thumbnail mb-2" alt="..." style="width:100px; border:none;">
         </div> -->
 
-    <form action="includes/edit-product.php?id=<?php echo $id; ?>" method="post" class="form-group">
+    <form action="includes/products.php?id=<?php echo $id; ?>" method="post" class="form-group">
         <div>
             <label for="formFileLg" class="form-label">Select Image</label>
             <input class="form-control form-control-lg" type="file" name="image" value="">
@@ -31,7 +31,7 @@ $id = $_GET['id'];
             <input type="text" class="form-control" name="price" value="">
         </div>
 
-        <button type="submit" class="btn btn-success" name="submit">Update Product</button>
+        <button type="submit" class="btn btn-success" name="edit">Update Product</button>
     </form>
 
 </div>
