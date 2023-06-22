@@ -6,6 +6,14 @@ include_once 'includes/header.php';
     <h1 class="my-4">Products Crud - Create New Product</h1>
     <a href="index.php" class="btn btn-success my-4">Go Back</a>
 
+    <?php
+    if (isset($_GET['error'])) {
+        if ($_GET['error'] == 'emptyinput') {
+            echo '<div class="alert alert-danger">Input Fields!</div>';
+        }
+    }
+    ?>
+
     <form action="includes/products.php" method="post" class="form-group">
         <div>
             <label for="formFileLg" class="form-label">Select Image</label>

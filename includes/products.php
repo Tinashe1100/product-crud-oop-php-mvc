@@ -18,13 +18,18 @@ function createProduct()
     $desc = $_POST['desc'];
     $price = $_POST['price'];
 
-    $createProduct = new ProductsController();
+    if (empty($image) || empty($title) || empty($desc) || empty($price)) {
+        header("Location: ../create-product.php?error=emptyinput");
+    } else {
 
-    try {
-        $createProduct->addProduct($title, $image, $desc, $price);
-        header("Location: ../index.php?product=created");
-    } catch (Error $e) {
-        echo "Error $e";
+        $createProduct = new ProductsController();
+
+        try {
+            $createProduct->addProduct($title, $image, $desc, $price);
+            header("Location: ../index.php?product=created");
+        } catch (Error $e) {
+            echo "Error $e";
+        }
     }
 }
 
