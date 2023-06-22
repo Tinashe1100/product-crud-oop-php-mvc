@@ -40,11 +40,11 @@ function editProduct()
     $desc = $_POST['desc'];
     $price = $_POST['price'];
 
-    $query = "UPDATE products SET image='$image', title='$title', description='$desc', price='$price' WHERE id='$id'";
-    if (!mysqli_query($connect, $query)) {
-        header("location: ../edit-product.php?error=updatefailer");
-    } else {
-        header("location: ../index.php?product=updated");
+    $updateProduct = new ProductsController();
+    try {
+        $updateProduct->editProduct($id, $title, $image, $desc, $price);
+    } catch (\Throwable $th) {
+        header("Location: ../index.php?product=updated");
     }
 }
 

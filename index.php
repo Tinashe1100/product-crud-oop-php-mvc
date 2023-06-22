@@ -41,7 +41,7 @@ include_once 'includes/header.php';
                     <td>&dollar;<?php echo $product['price']; ?></td>
                     <td><?php echo $product['date_created']; ?></td>
                     <td>
-                        <a href="includes/delete-product.php?id=<?php echo $product['id'] ?>" class="btn btn-outline-danger">Delete</a>
+                        <a href="includes/products.php?id=<?php echo $product['id'] ?>" class="btn btn-outline-danger">Delete</a>
                         <a href="edit-product.php?id=<?php echo $product['id'] ?>" class="btn btn-outline-success">Edit</a>
                     </td>
                 </tr>
