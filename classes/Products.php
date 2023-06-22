@@ -45,7 +45,7 @@ class Products extends Database
         return $products;
     }
 
-    protected function editProducts($id, $title, $image, $desc, $price)
+    protected function updateProducts($id, $title, $image, $desc, $price)
     {
         $title = $title;
         $image = $image;
@@ -55,7 +55,7 @@ class Products extends Database
 
         $query = "UPDATE products SET image='$image', title='$title', description='$desc', price='$price' WHERE id='$id'";
         $stmt = $this->connect()->prepare($query);
-        $stmt->execute([$title, $image, $desc, $price]);
+        $stmt->execute([$id, $title, $image, $desc, $price]);
     }
 
     public function deleteProduct($id)

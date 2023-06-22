@@ -10,7 +10,7 @@ class ProductsController extends Products
 
     public function editProduct($id, $title, $image, $desc, $price)
     {
-        return $this->editProduct($id, $title, $image, $desc, $price);
+        return $this->updateProducts($id, $title, $image, $desc, $price);
     }
 
     public function delete($id)

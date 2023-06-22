@@ -31,7 +31,6 @@ function createProduct()
 // update product function
 function editProduct()
 {
-    global $connect;
     $id = $_GET['id'];
 
     // form inputs
